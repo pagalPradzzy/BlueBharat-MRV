@@ -7,16 +7,38 @@
     "@testing-library/jest-dom": "^6.8.0",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.11.0",
+    "ethers": "^6.15.0",
+    "leaflet": "^1.9.4",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-leaflet": "^5.0.0",
+    "react-router-dom": "^7.8.2",
     "react-scripts": "5.0.1",
+    "recharts": "^3.1.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test:coverage": "react-scripts test --coverage --ci --forceExit --detectOpenHandles",
+    "test:ci": "CI=true react-scripts test --coverage --ci --forceExit --detectOpenHandles",
+    "eject": "react-scripts eject",
+    "lint": "eslint src/**/*.{js,jsx} --quiet",
+    "lint:fix": "eslint src/**/*.{js,jsx} --fix",
+    "format": "prettier --write src/**/*.{js,jsx,json,css,md}",
+    "format:check": "prettier --check src/**/*.{js,jsx,json,css,md}",
+    "build:analyze": "npm run build && npx serve -s build",
+    "clean": "rm -rf build node_modules package-lock.json",
+    "reinstall": "npm run clean && npm install",
+    "precommit": "npm run lint && npm run format:check && npm run test:ci",
+    "prepare": "node -e \"try { require('husky').install() } catch (e) { console.log('Husky not found, skipping git hooks setup') }\"",
+    "security:audit": "npm audit --audit-level moderate",
+    "security:fix": "npm audit fix",
+    "deps:check": "npm outdated",
+    "deps:update": "npm update",
+    "prepare-commit": "node prepare-commit.js"
   },
   "eslintConfig": {
     "extends": [
@@ -35,5 +57,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17"
   }
 }

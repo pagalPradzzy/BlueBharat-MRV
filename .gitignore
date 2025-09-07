@@ -1,23 +1,309 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Blue Carbon MRV Dashboard - GitIgnore File
+# This file specifies intentionally untracked files that Git should ignore
 
-# dependencies
+# ===================================
+# Dependencies
+# ===================================
 /node_modules
 /.pnp
 .pnp.js
 
-# testing
-/coverage
+# Yarn Integrity file
+.yarn-integrity
 
-# production
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# Package lock files (keep only one)
+package-lock.json
+yarn.lock
+
+# ===================================
+# Build & Production
+# ===================================
 /build
+/dist
+*.tgz
 
-# misc
-.DS_Store
+# Webpack bundles
+bundle.js*
+*.bundle.js
+*.bundle.css
+
+# ===================================
+# Testing
+# ===================================
+/coverage
+*.lcov
+
+# Jest
+__tests__/coverage/
+.nyc_output
+
+# Cypress
+cypress/videos
+cypress/screenshots
+
+# ===================================
+# Environment Variables
+# ===================================
+.env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
+.env.staging
 
+# API Keys and secrets
+.secrets
+*.key
+*.pem
+
+# ===================================
+# React Specific
+# ===================================
+# React scripts build
+/build
+
+# Storybook build outputs
+storybook-static
+
+# ===================================
+# Tailwind CSS
+# ===================================
+# Tailwind output (if not using @tailwind directives)
+tailwind.output.css
+
+# ===================================
+# Maps & GIS Data
+# ===================================
+# Leaflet temporary files
+*.tiles
+
+# Large GIS data files
+*.geojson
+*.shp
+*.dbf
+*.shx
+*.prj
+
+# MapBox tokens
+.mapbox
+
+# ===================================
+# Blockchain & Crypto
+# ===================================
+# MetaMask and crypto wallets
+*.wallet
+*.keystore
+
+# Blockchain logs
+blockchain.log
+ganache.log
+
+# Truffle
+/contracts/build/
+
+# Hardhat
+cache/
+artifacts/
+
+# ===================================
+# Logs
+# ===================================
+logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+lerna-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# ===================================
+# Operating System
+# ===================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+
+# ===================================
+# IDEs & Editors
+# ===================================
+# VSCode
+.vscode/
+*.code-workspace
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# IntelliJ
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Atom
+.atom/
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+
+# ===================================
+# Temporary Files
+# ===================================
+*.tmp
+*.temp
+.cache/
+.parcel-cache/
+
+# ===================================
+# Documentation
+# ===================================
+# Generated docs
+/docs/build/
+/docs/.docusaurus/
+
+# ===================================
+# Database & Uploads
+# ===================================
+# SQLite
+*.sqlite
+*.sqlite3
+*.db
+
+# Upload directories
+uploads/
+tmp/
+
+# ===================================
+# Version Control
+# ===================================
+# Git
+.git/
+*.orig
+
+# SVN
+.svn/
+
+# ===================================
+# Performance & Monitoring
+# ===================================
+# Web vitals
+.web-vitals.json
+
+# Bundle analyzer
+bundle-analyzer-report.html
+
+# Lighthouse reports
+lighthouse-*.html
+
+# ===================================
+# Development Tools
+# ===================================
+# ESLint cache
+.eslintcache
+
+# Prettier ignore
+.prettierignore
+
+# Stylelint
+.stylelintcache
+
+# Local development
+.local
+
+# ===================================
+# Deployment
+# ===================================
+# Vercel
+.vercel
+
+# Netlify
+.netlify/
+
+# AWS
+.aws/
+
+# Heroku
+.heroku/
+
+# ===================================
+# Project Specific
+# ===================================
+# Government sensitive data
+sensitive-data/
+classified/
+
+# Project documentation drafts
+drafts/
+
+# Large media files
+*.mp4
+*.avi
+*.mov
+*.wmv
+*.flv
+
+# Demo data backups
+demo-backup/
+
+# Temporary development files
+temp-*
+dev-*
+test-output/
+
+# ===================================
+# Archives
+# ===================================
+*.tar
+*.tar.gz
+*.tar.bz2
+*.zip
+*.rar
+*.7z
+
+# ===================================
+# Certificates & Security
+# ===================================
+*.cert
+*.crt
+*.p12
+ssl/
+
+# JWT secrets
+jwt-secret*
+
+# OAuth configs
+oauth-config*
